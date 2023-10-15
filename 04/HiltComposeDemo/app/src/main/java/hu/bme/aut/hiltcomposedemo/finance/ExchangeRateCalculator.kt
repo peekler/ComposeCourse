@@ -6,6 +6,7 @@ class ExchangeRateCalculator constructor(
     private var hufRates: HufRates = HufRates()
 ) {
 
+
     fun eurToHuf(amountOfEur: Double): Double {
         return amountOfEur * hufRates.EUR_TO_HUF
     }

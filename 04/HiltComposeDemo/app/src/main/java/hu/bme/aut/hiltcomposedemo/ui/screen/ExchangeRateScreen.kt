@@ -52,6 +52,7 @@ fun ExchangeRateScreen(
             onClick = {
                 // set textResult here...
                 textResult = exchangeRateViewModel.hufToEur(hufText.toDouble()).toString()
+                //textResult = exchangeRateCalculator.hufToEur(hufText.toDouble()).toString()
             }
 
         ) {

@@ -21,11 +21,11 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    /*
-    @Exchange2023Average
-    @Inject
-    lateinit var exchangeRateCalculator: ExchangeRateCalculator
-     */
+
+    //@Exchange2022Average
+    //@Inject
+    //lateinit var exchangeRateCalculator: ExchangeRateCalculator
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
