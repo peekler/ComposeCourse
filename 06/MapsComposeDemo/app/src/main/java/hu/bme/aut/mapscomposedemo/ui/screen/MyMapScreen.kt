@@ -13,12 +13,14 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.model.BitmapDescriptor
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
@@ -27,7 +29,6 @@ import com.google.maps.android.compose.Marker
 import com.google.maps.android.compose.MarkerState
 import com.google.maps.android.compose.Polyline
 import com.google.maps.android.compose.rememberCameraPositionState
-import hu.bme.aut.mapscomposedemo.R
 import kotlinx.coroutines.launch
 import java.util.Random
 
@@ -35,6 +36,7 @@ import java.util.Random
 fun MyMapScreen(
     viewModel: MyMapViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     val coroutineScope = rememberCoroutineScope()
 
     var uiSettings by remember {
@@ -49,7 +51,9 @@ fun MyMapScreen(
         mutableStateOf(
             MapProperties(
                 mapType = MapType.NORMAL,
-                isTrafficEnabled = false
+                isTrafficEnabled = false,
+                mapStyleOptions = MapStyleOptions.loadRawResourceStyle(context,
+                    hu.bme.aut.mapscomposedemo.R.raw.mymapstyle)
             )
         )
     }
