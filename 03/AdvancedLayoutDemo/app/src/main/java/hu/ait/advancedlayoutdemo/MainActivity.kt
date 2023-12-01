@@ -32,6 +32,7 @@ import hu.ait.advancedlayoutdemo.ui.screen.scaffold.ScaffoldDemoScreen
 import hu.ait.advancedlayoutdemo.ui.theme.AdvancedLayoutDemoTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -44,7 +45,7 @@ class MainActivity : ComponentActivity() {
                     //Greeting("Android")
                     //MagnifierDemo()
                     // Uncomment this to try pager
-                    //HorizontalPagerDemo()
+                    HorizontalPagerDemo()
 
                     // Uncomment this to try flow layout
                     //FlowScreenDemo()
@@ -56,7 +57,7 @@ class MainActivity : ComponentActivity() {
                     //ScaffoldDemoScreen()
 
                     // Uncomment this to try navigation drawer layout
-                    DrawerScreen()
+                    //DrawerScreen()
                 }
             }
         }

@@ -32,7 +32,7 @@ class NewsViewModel @Inject constructor(
         newsUiState = NewsUiState.Loading
         viewModelScope.launch {
             newsUiState = try {
-                val result = newsAPI.getNews("hu",
+                val result = newsAPI.getNews("us",
                     BuildConfig.NEWS_API_KEY)
                 NewsUiState.Success(result)
             } catch (e: Exception) {
